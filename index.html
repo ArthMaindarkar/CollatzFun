@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collatz Conjecture Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Collatz Conjecture Explorer</h1>
+    
+    <div id="info">
+      <p>
+        The Collatz Conjecture is a sequence defined for positive integers. 
+        If the current term is even, the next term is obtained by dividing it by 2.
+        If the current term is odd, the next term is obtained by multiplying it by 3 and adding 1.
+      </p>
+      <p>For further reading, check out:
+        <a href="https://en.wikipedia.org/wiki/Collatz_conjecture" target="_blank">Wikipedia</a>,
+        <a href="https://mathworld.wolfram.com/CollatzProblem.html" target="_blank">MathWorld</a>
+      </p>
+    </div>
+
+    <div id="collatzForm">
+      <label for="numberInput">Enter a positive natural number:</label>
+      <input type="number" id="numberInput" placeholder="Enter a number">
+      
+      <label for="truncatedCheckbox">Truncated:</label>
+      <input type="checkbox" id="truncatedCheckbox">
+
+      <label for="binaryCheckbox">Binary:</label>
+      <input type="checkbox" id="binaryCheckbox">
+      
+      <button onclick="calculateCollatz()">Calculate</button>
+
+      <div id="result"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
