@@ -8,12 +8,13 @@ function calculateCollatz() {
   resultDiv.innerHTML = '';
 
   // Check if the input is a positive whole number
-  const number = parseInt(numberInput, 10);
-  if (isNaN(number) || number <= 0 || !Number.isInteger(number)) {
+  const initialNumber = parseInt(numberInput, 10);
+  if (isNaN(initialNumber) || initialNumber <= 0 || !Number.isInteger(initialNumber)) {
     resultDiv.innerHTML = '<p>Please enter a valid positive whole number.</p>';
     return;
   }
 
+  let number = initialNumber;
   let steps = 0;
 
   // Calculate Collatz sequence
@@ -37,5 +38,6 @@ function calculateCollatz() {
 
   // Display total steps and full Collatz sequence
   resultDiv.innerHTML += `<p># Steps: ${steps}</p>`;
-  resultDiv.innerHTML += `<p>Collatz Sequence: ${number}</p>`;
+  resultDiv.innerHTML += `<p>Collatz Sequence: ${initialNumber}</p>`;
 }
+
