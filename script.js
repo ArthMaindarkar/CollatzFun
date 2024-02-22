@@ -22,11 +22,9 @@ function calculateCollatz() {
     if (truncatedCheckbox && number % 2 === 0) {
       // Skip even numbers in truncated mode
     } else {
-      // Display intermediate steps in binary mode
+      // Display truncated steps in binary mode
       if (binaryCheckbox) {
-        const binaryString = number.toString(2);
-        const binarySum = (number + (number % 2 === 0 ? 0 : 3 * number + 1)).toString(2);
-        resultDiv.innerHTML += `<p>Step ${++steps}: ${binaryString} -> ${binarySum}</p>`;
+        resultDiv.innerHTML += `<p>Step ${++steps}: ${number.toString(2)}</p>`;
       } else {
         resultDiv.innerHTML += `<p>Step ${++steps}: ${number}</p>`;
       }
@@ -40,4 +38,3 @@ function calculateCollatz() {
   resultDiv.innerHTML += `<p># Steps: ${steps}</p>`;
   resultDiv.innerHTML += `<p>Collatz Sequence: ${initialNumber}</p>`;
 }
-
