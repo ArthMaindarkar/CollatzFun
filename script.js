@@ -15,35 +15,27 @@ function calculateCollatz() {
   }
 
   let steps = 0;
-  let collatzSequence = [number];
 
   // Calculate Collatz sequence
   while (number !== 1) {
-    if (number % 2 === 0) {
-      number /= 2;
-    } else {
-      number = 3 * number + 1;
-    }
-
-    collatzSequence.push(number);
-    steps++;
-
     if (truncatedCheckbox && number % 2 === 0) {
       // Skip even numbers in truncated mode
-      continue;
+    } else {
+      // Display intermediate steps in binary mode
+      if (binaryCheckbox) {
+        const binaryString = number.toString(2);
+        const binarySum = (number + (number % 2 === 0 ? 0 : 3 * number + 1)).toString(2);
+        resultDiv.innerHTML += `<p>Step ${++steps}: ${binaryString} -> ${binarySum}</p>`;
+      } else {
+        resultDiv.innerHTML += `<p>Step ${++steps}: ${number}</p>`;
+      }
     }
 
-    // Display intermediate steps in binary mode
-    if (binaryCheckbox) {
-      const binaryString = number.toString(2);
-      const binarySum = (number + collatzSequence[steps - 1]).toString(2);
-      resultDiv.innerHTML += `<p>Step ${steps}: ${binaryString} -> ${binarySum}</p>`;
-    } else {
-      resultDiv.innerHTML += `<p>Step ${steps}: ${number}</p>`;
-    }
+    // Update the number according to the Collatz sequence
+    number = (number % 2 === 0) ? (number / 2) : (3 * number + 1);
   }
 
   // Display total steps and full Collatz sequence
   resultDiv.innerHTML += `<p># Steps: ${steps}</p>`;
-  resultDiv.innerHTML += `<p>Collatz Sequence: ${collatzSequence.join(', ')}</p>`;
+  resultDiv.innerHTML += `<p>Collatz Sequence: ${number}</p>`;
 }
