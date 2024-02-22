@@ -4,6 +4,9 @@ function calculateCollatz() {
   const binaryCheckbox = document.getElementById('binaryCheckbox').checked;
   const resultDiv = document.getElementById('result');
 
+  // Clear previous results
+  resultDiv.innerHTML = '';
+
   // Check if the input is a positive whole number
   const number = parseInt(numberInput, 10);
   if (isNaN(number) || number <= 0 || !Number.isInteger(number)) {
