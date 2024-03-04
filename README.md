@@ -1,5 +1,18 @@
-Website that displays number of steps for Collatz process to terminate
-Contains initial summary and links to further reading to explain problem
-User enters number and output is the number of steps it takes for Collatz process to reach 1
-Additionally outputs all numbers reached by Collatz process starting from initial number
-User can also use checkboxes to view the output in binary, only view the odd numbers reached by the process, or both
+- **Website Features:**
+  - Displays number of steps for Collatz process to terminate.
+  - Contains an initial summary of the problem.
+  - Provides links to further reading for a more in-depth explanation.
+
+- **User Interaction:**
+  - Allows the user to enter a number.
+  - Outputs the number of steps it takes for the Collatz process to reach 1.
+
+- **Additional Outputs:**
+  - Displays all numbers reached by the Collatz process starting from the initial number.
+
+- **Optional Viewing Options:**
+  - Checkboxes for user customization:
+    - View the output in binary.
+    - Only view the odd numbers reached by the process.
+    - Both options can be selected simultaneously.
+
