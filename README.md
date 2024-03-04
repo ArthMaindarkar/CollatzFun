@@ -1,3 +1,7 @@
+# CollatzFun Website
+
+Website hosted [here](https://arthmaindarkar.github.io/CollatzFun/)
+
 - **Website Features:**
   - Displays number of steps for Collatz process to terminate.
   - Contains an initial summary of the problem.
